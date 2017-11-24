@@ -214,18 +214,20 @@ export default class FoldingCell extends Component {
 
     const perspective = this.props.perspective || rootDefaultProps.perspective;
 
-    ref.setNativeProps({
-      style: {
-        transform: [
-          {
-            perspective,
-          },
-          {
-            matrix,
-          },
-        ],
-      },
-    });
+    if(ref){
+      ref.setNativeProps({
+        style: {
+          transform: [
+            {
+              perspective,
+            },
+            {
+              matrix,
+            },
+          ],
+        },
+      });
+    }
   }
 
   expand() {
